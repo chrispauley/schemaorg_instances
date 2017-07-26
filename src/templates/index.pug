@@ -1,0 +1,33 @@
+- var headObject = { title: "schema instances - Home", description: "Home page.", keywords: "my keywords"}
+- var pathObject = { currentPage: "home" }
+// myData, openGraphData are coming from gulpfile.js
+//
+doctype html
+html(lang='en')
+  include includes/mixins.pug
+  //+headSection4_Cloud(myData, openGraphData)
+  +headSection4_Cloud(headObject)
+
+  body
+    // Navigation
+    +navBar(pathObject)
+
+    // Page Content
+    .container
+      // Page Heading/Breadcrumbs
+      .row
+        .col-lg-12
+          h1.page-header
+            |
+            small This is a test of a data driven template site
+          ol.breadcrumb
+            li
+              a(href='index.html') Home
+
+      // /.row
+      .row
+        .col-lg-12
+          div
+            h1= name
+            p= author
+            p= context

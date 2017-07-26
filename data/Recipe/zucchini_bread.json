@@ -1,0 +1,26 @@
+{
+  "@context": "http://schema.org/",
+  "@type": "Recipe",
+  "cookTime": "PT25M",
+  "cookingMethod": "Bake at 350 degrees F for 25 minutes.",
+  "ingredients": [
+    "3 C Flour",
+    "1.5 C Sugar",
+    "2 Tsp Baking Soda",
+    "2 Tsp Cinnamon"
+    "1 Tsp Salt",
+    "1 C Vegetable Oil",
+    ".5 C Milk",
+    "2 Eggs",
+    "2 Tbs Lemon Juice",
+    "2 Tbs Vanilla",
+    "2 C Shredded Zucchini"
+  ],
+  "prepTime": "PT20M",
+  "recipeCategory": "Bread",
+  "recipeYield": "4 small loaves or 2 medium loaves (6 in)",
+  "author": "unknown",
+  "name": "Zucchini Bread",
+  "thumbnailUrl": "http://via.placeholder.com/200/50?text=zucchini_bread+rocks!",
+  "image": "http://via.placeholder.com/300?text=zucchini_bread+rocks!"
+}

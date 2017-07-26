@@ -1,0 +1,22 @@
+{
+  "@context": "http://schema.org/",
+  "@type": "Recipe",
+  "cookTime": "PT90M",
+  "cookingMethod": "Bake at 350 degrees F for 1.5 hours",
+  "ingredients": [
+    "3 Bannanas",
+    ".5 C Oil",
+    "1.5 C Sugar",
+    "1 Tbs Vanilla",
+    "2 C Flour",
+    ".5 Tsp Baking Powder",
+    ".75 Tsp Baking Soda",
+    ".5 Tsp Salt",
+    ".25 C Orange Juice"
+  ],
+  "prepTime": "PT20M",
+  "recipeCategory": "Bread",
+  "recipeYield": "4 small loaves or 2 medium loaves (6 in)",
+  "author": "Cathy Pauley",
+  "name": "Banana Bread"
+}

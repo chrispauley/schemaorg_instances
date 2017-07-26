@@ -1,0 +1,23 @@
+{
+  "name": "schemaorg_instances",
+  "description": "This is a static website building application that uses semantic data to build the content for humans and machines.",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "devDependencies": {
+    "front-matter": "^2.1.2",
+    "gulp": "^3.9.1",
+    "gulp-assign-to-pug": "^0.2.1",
+    "gulp-data": "^1.2.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-pug-inheritance": "^0.2.1",
+    "gulp-swig": "^0.8.0",
+    "path": "^0.12.7"
+  },
+
+  "author": "Chris Pauley <pauleyc@yahoo.com>",
+  "license": "MIT"
+}

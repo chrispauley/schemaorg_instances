@@ -284,6 +284,10 @@ defaults@^1.0.0:
   dependencies:
     clone "^1.0.2"
 
+deprecate@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/deprecate/-/deprecate-1.0.0.tgz#661490ed2428916a6c8883d8834e5646f4e4a4a8"
+
 deprecated@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/deprecated/-/deprecated-0.0.1.tgz#f9c9af5464afa1e7a971458a8bdef2aa94d5bb19"
@@ -720,6 +724,23 @@ gulp-data:
     through2 "^2.0.0"
     util-extend "^1.0.1"
 
+gulp-foreach:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/gulp-foreach/-/gulp-foreach-0.1.0.tgz#2547abfd1a1b75f569b54194190ef1c0b0289538"
+  dependencies:
+    gulp-util "~2.2.14"
+    through2 "~0.6.3"
+
+gulp-merge-json:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gulp-merge-json/-/gulp-merge-json-1.0.1.tgz#ab448ef57136583687dde3712aa8bd1c052a184b"
+  dependencies:
+    deprecate "^1.0.0"
+    gulp-util "^3.0.8"
+    json5 "^0.5.1"
+    lodash "^4.17.4"
+    through "^2.3.8"
+
 gulp-pug, gulp-pug@^3.0.2:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/gulp-pug/-/gulp-pug-3.3.0.tgz#46982c1439c094c360542ed8ba5c882d3bb711cf"
@@ -739,6 +760,10 @@ gulp-pug-inheritance:
     pug-inheritance "^2.0.0"
     through2 "^2.0.1"
     vinyl-fs "^2.4.3"
+
+gulp-rename:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/gulp-rename/-/gulp-rename-1.2.2.tgz#3ad4428763f05e2764dec1c67d868db275687817"
 
 gulp-sourcemaps@1.6.0:
   version "1.6.0"
@@ -773,7 +798,7 @@ gulp-util@^2.2.0, gulp-util@~2.2.14:
     through2 "^0.5.0"
     vinyl "^0.2.1"
 
-gulp-util@^3.0.0, gulp-util@^3.0.2, gulp-util@^3.0.6, gulp-util@^3.0.7:
+gulp-util@^3.0.0, gulp-util@^3.0.2, gulp-util@^3.0.6, gulp-util@^3.0.7, gulp-util@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -1065,6 +1090,10 @@ json-stable-stringify@^1.0.0:
   dependencies:
     jsonify "~0.0.0"
 
+json5@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
+
 jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
@@ -1323,7 +1352,7 @@ lodash.values@~2.4.1:
   dependencies:
     lodash.keys "~2.4.1"
 
-lodash@^4.16.4:
+lodash@^4.16.4, lodash@^4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -2075,7 +2104,7 @@ swig@1.4.*:
     optimist "~0.6"
     uglify-js "~2.4"
 
-through@~2.3, through@~2.3.1, through@2:
+through@^2.3.8, through@~2.3, through@~2.3.1, through@2:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
@@ -2093,7 +2122,7 @@ through2@^0.5.0:
     readable-stream "~1.0.17"
     xtend "~3.0.0"
 
-through2@^0.6.0, through2@^0.6.1:
+through2@^0.6.0, through2@^0.6.1, through2@~0.6.3:
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-0.6.5.tgz#41ab9c67b29d57209071410e1d7a7a968cd3ad48"
   dependencies:

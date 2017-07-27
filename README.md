@@ -52,7 +52,9 @@ For example, add a JSON-LD recipe content to the data\Recipe folder.
 yarn install
 
 #### Preview the site
-
+```
+webpack-dev-server
+```
 
 ## Contributing
 
@@ -64,7 +66,8 @@ yarn install
 
 ## History
 
-TODO: Write history
+2017-07-28 Added repo to github
+
 
 ## Credits
 - W3C

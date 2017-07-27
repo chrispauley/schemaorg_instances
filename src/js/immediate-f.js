@@ -8,10 +8,10 @@
     "sameAs": [
       "https://www.facebook.com/serpsapp",
       "https://twitter.com/serpsapp"
-    ],
+    ]};
     var script = document.createElement('script');
     script.type = "application/ld+json";
     script.innerHTML = JSON.stringify(data);
     document.getElementsByTagName('head')[0].appendChild(script);
-  }
+    Window.mydata = data;
 })(document);

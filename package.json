@@ -6,18 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "devDependencies": {
     "front-matter": "^2.1.2",
     "gulp": "^3.9.1",
     "gulp-assign-to-pug": "^0.2.1",
     "gulp-data": "^1.2.1",
+    "gulp-foreach": "^0.1.0",
+    "gulp-merge-json": "^1.0.1",
     "gulp-pug": "^3.3.0",
     "gulp-pug-inheritance": "^0.2.1",
+    "gulp-rename": "^1.2.2",
     "gulp-swig": "^0.8.0",
     "path": "^0.12.7"
   },
-
   "author": "Chris Pauley <pauleyc@yahoo.com>",
   "license": "MIT"
 }

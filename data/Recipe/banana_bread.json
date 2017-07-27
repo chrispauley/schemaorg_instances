@@ -1,5 +1,5 @@
 {
-  "@context": "http://schema.org/",
+  "@context": "http://schema.org",
   "@type": "Recipe",
   "cookTime": "PT90M",
   "cookingMethod": "Bake at 350 degrees F for 1.5 hours",

@@ -1,5 +1,5 @@
 {
-  "@context": "http://schema.org/",
+  "@context": "http://schema.org",
   "@type": "Recipe",
   "cookTime": "PT25M",
   "cookingMethod": "Bake at 350 degrees F for 25 minutes.",

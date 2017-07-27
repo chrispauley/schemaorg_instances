@@ -1,0 +1,6 @@
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://chrispauley.github.io/schemaorg_instances",
+  "name": "SchemaOrg Instances",
+}

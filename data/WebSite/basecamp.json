@@ -1,22 +1,11 @@
-
 {
   "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "Basecamp",
+  "@type": "WebSite",
   "url": "https://basecamp.com",
-  "logo": "https://help.basecamp.com/images/logo-bc.png",
-  "sameAs": [
-    "https://twitter.com/basecamp",
-    "https://www.linkedin.com/company/37signals",
-    "https://www.youtube.com/user/37signals",
-    "https://instagram.com/basecamp/",
-    "https://www.facebook.com/37signals",
-    "https://plus.google.com/+basecamp"
-  ],
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "email": "support@basecamp.com",
-    "contactType": "customer support",
-    "url": "https://basecamp.com/support"
-  }]
+  "name": "Basecamp",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://basecamp.com/help/3/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 }

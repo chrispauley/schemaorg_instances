@@ -22,7 +22,6 @@ mixin headSection4_Cloud(headObject)
 
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
 
-
 mixin navBar(pathObject)
   - var active = pathObject.currentPage;// Navigation
     nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
@@ -43,10 +42,99 @@ mixin navBar(pathObject)
               a(href='about.html') About
             li.dropdown
               a.dropdown-toggle(href='#', data-toggle='dropdown')
-                | Products
+                | Instances
                 b.caret
               ul.dropdown-menu
                 li
-                  a(href='recipe_1.html') Banana Bread
+                  a(href='banana_bread.html') Banana Bread
                 li
-                  a(href='recipe_2.html') Zucchini Bread
+                  a(href='zucchini_bread.html') Zucchini Bread
+                li
+                  a(href='impactsignsusa.html') Impact Signs, USA
+
+
+mixin iterateProps(obj)
+  ul
+    - for(var prop in obj) {
+      li #{prop}: #{obj[prop]}
+    - }
+
+mixin postalAddressFormat(adr)
+  -var linkType = adr["@type"]
+  -var formattedAddressLine = adr.addressLocality + " " + adr.addressRegion + ", " + adr.postalCode
+  +iterateProps(adr)
+
+
+mixin localBusinessCard(data)
+  -var linkType = data["@context"] + "/" + data["@type"]
+  -var adr = data.address
+  -var formattedAddressLine = adr.addressLocality + " " + adr.addressRegion + ", " + adr.postalCode
+  .panel.panel-default.well
+    .panel-heading
+      span= data.name
+      p= data.description
+
+    .panel-body
+      p= adr.streetAddress
+      p= formattedAddressLine
+      p= data.telephone
+    .panel-body
+      span Formatted:
+      span
+        +iterateProps(data.address)
+
+
+mixin dataFromGulp(data)
+  .panel.panel-default
+    .panel-heading Data Object from Gulpjs
+      -var linkType = data["@context"] + "/" + data["@type"]
+      p.small
+        a(href= linkType)
+          span= linkType
+    .panel-body
+      ul
+      - for(var prop in data) {
+        li #{prop}: #{data[prop]}
+      - }
+
+mixin showJSON(data)
+  .panel.panel-default
+    .panel-heading JSON Data Object from Gulpjs
+      -var jsonString = JSON.stringify(data, null, 2)
+
+    .panel-body
+      span= jsonString
+
+mixin wrapInScriptTag(pData)
+  script(type='application/ld+json')= pData
+
+// Shows a row that has a tabbed panel for structured and stringify'd JSON.
+mixin fromGulpRow(data)
+  .row
+    .col-lg-12
+      .panel.panel-default.well
+        .panel-heading Data From Gulp.js
+        .panel-body
+          ul.nav.nav-tabs(role="tablist")
+            li.active
+              a(href="#formatedData",role="tab",data-toggle="tab")
+                i.fa.fa-home Structured
+            li
+              a(href="#jsonData",role="tab",data-toggle="tab")
+                i.fa.fa-cog JSON
+
+          .tab-content
+            .tab-pane(id="formatedData")
+              ul
+              - for(var prop in data) {
+                li #{prop}: #{data[prop]}
+              - }
+            .tab-pane(id="jsonData")
+              -var jsonPretty = JSON.stringify(data,null,2);
+              pre= jsonPretty
+
+        .panel-footer
+          -var linkType = data["@context"] + "/" + data["@type"]
+          p.small
+            a(href= linkType)
+              pre= linkType

@@ -1,0 +1,46 @@
+- var headObject = { title: "schema instances - Recipe", description: "Recipe template.", keywords: "my keywords"}
+- var pathObject = { currentPage: "Recipe" }
+- var testData = { title: "this title", context: "my context with @ symbol"}
+// myData, openGraphData are coming from gulpfile.js
+//
+doctype html
+html(lang='en')
+  include includes/mixins.pug
+  //+headSection4_Cloud(myData, openGraphData)
+  +headSection4_Cloud(headObject)
+
+  body
+    // Navigation
+    +navBar(pathObject)
+
+    // Page Content
+    .container
+      // Page Heading/Breadcrumbs
+      .row
+        .col-lg-12
+          h1.page-header
+            |
+            small= name
+          ol.breadcrumb
+            li
+              a(href='index.html') Home
+            -var typeData = locals["@type"]
+            li.active= typeData
+
+      // /.row
+      .row
+        .col-lg-12
+          div
+            h1= name
+            p= author
+            p= context
+      .row
+        .col-lg-5
+          div.well
+            h2= cookingMethod
+            p= recipeYield
+            ul
+              li= testData.title
+              li= testData['context']
+
+      +fromGulpRow(locals)

@@ -24,6 +24,19 @@ html(lang='en')
             li
               a(href='index.html') Home
 
+      .jumbotron
+        h3.display-3 Hello, world!
+        p.lead
+          | This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+        hr.my-4
+        p
+          | It uses utility classes for typography and spacing to space content out within the larger container.
+        p.lead
+          a.btn.btn-primary.btn-lg(href='#', role='button') Learn more
+
+
+
+
       // /.row
       .row
         .col-lg-12
@@ -31,3 +44,7 @@ html(lang='en')
             h1= name
             p= author
             p= context
+
+    include includes/footer.pug
+//- script
+//-   include ../js/immediate-f.js

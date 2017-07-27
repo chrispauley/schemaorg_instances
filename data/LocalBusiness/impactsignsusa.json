@@ -1,0 +1,15 @@
+{
+  "@context": "http://schema.org",
+  "@type": "LocalBusiness",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "427 York Road",
+    "addressLocality": "New Hope",
+    "addressRegion": "PA",
+    "postalCode": "18938"
+  },
+  "description": "Sign Shop",
+  "name": "Impact Signs, USA",
+  "telephone": "2677402195",
+  "url": ""
+}

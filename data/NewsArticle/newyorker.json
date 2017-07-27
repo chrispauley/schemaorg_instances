@@ -1,0 +1,49 @@
+{
+  "@context": "http://schema.org",
+  "@type": "NewsArticle",
+  "headline": "In Silicon Valley Now, It’s Almost Always Winner Takes All",
+  "alternativeHeadline": "In Silicon Valley Now, It’s Almost Always Winner Takes All",
+  "articleBody": "",
+  "articleSection": "Elements",
+  "dateModified": "2017-06-19T18:48:55.381Z",
+  "datePublished": "2015-12-30T20:50:00.000Z",
+  "description": "",
+  "keywords": ["business", "richard branson", "uber"],
+  "thumbnailUrl": "https://media.newyorker.com/photos/5909732ac14b3c606c10833a/4:3/w_960,c_limit/Malik-Silicon-Valley-Winner-Take-All.jpg",
+  "url": "http://www.newyorker.com/tech/elements/in-silicon-valley-now-its-almost-always-winner-takes-all",
+  "author": {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": ["Om Malik"]
+  },
+  "creator": {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": ["Om Malik"]
+  },
+  "image": {
+    "@context": "http://schema.org",
+    "@type": "ImageObject",
+    "url": "https://media.newyorker.com/photos/5909732ac14b3c606c10833a/4:3/w_960,c_limit/Malik-Silicon-Valley-Winner-Take-All.jpg",
+    "width": 0,
+    "height": 0
+  },
+  "publisher": {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "The New Yorker",
+    "url": "http://www.newyorker.com",
+    "logo": {
+      "@context": "http://schema.org",
+      "@type": "ImageObject",
+      "url": "http://www.newyorker.com/images/svg/tny-logo.svg",
+      "width": 190,
+      "height": 44
+    }
+  },
+  "mainEntityOfPage": {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "http://www.newyorker.com/tech/elements/in-silicon-valley-now-its-almost-always-winner-takes-all"
+  }
+}

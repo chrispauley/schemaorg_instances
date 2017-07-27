@@ -1,0 +1,22 @@
+
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Basecamp",
+  "url": "https://basecamp.com",
+  "logo": "https://help.basecamp.com/images/logo-bc.png",
+  "sameAs": [
+    "https://twitter.com/basecamp",
+    "https://www.linkedin.com/company/37signals",
+    "https://www.youtube.com/user/37signals",
+    "https://instagram.com/basecamp/",
+    "https://www.facebook.com/37signals",
+    "https://plus.google.com/+basecamp"
+  ],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "email": "support@basecamp.com",
+    "contactType": "customer support",
+    "url": "https://basecamp.com/support"
+  }]
+}

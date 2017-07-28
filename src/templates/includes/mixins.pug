@@ -15,8 +15,14 @@ mixin headSection4_Cloud(headObject)
     link(rel='icon', href='img/icons/favicon.ico')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
-
+    script(src="js/clipboard.min.js", type='text/javascript')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    //- style.
+    //-   .clippy {
+    //-     margin-top: -3px;
+    //-     position: relative;
+    //-     top: 3px; vertical-align: middle;}
+
 
 mixin navBar(pathObject)
   - var active = pathObject.currentPage;// Navigation
@@ -49,6 +55,8 @@ mixin navBar(pathObject)
                   a(href='impactsignsusa.html') Impact Signs, USA
                 li
                   a(href='musicEvent.html') Music Event
+                li
+                  a(href='newyorker.html') News Article
 
 mixin iterateProps(obj)
   ul
@@ -110,7 +118,10 @@ mixin fromGulpRow(data)
   .row
     .col-lg-12
       .panel.panel-default.well
-        .panel-heading Data From Gulp.js
+        .panel-heading
+          span Data From Gulp.js
+          button.btn.btn-sm(data-clipboard-target='#jsonDataContainer') copy
+            //img(src='img/clippy.svg', alt='Copy to clipboard')
         .panel-body
           ul.nav.nav-tabs(role="tablist")
             li.active
@@ -128,7 +139,7 @@ mixin fromGulpRow(data)
               - }
             .tab-pane(id="jsonData")
               -var jsonPretty = JSON.stringify(data,null,2);
-              pre= jsonPretty
+              pre(id='jsonDataContainer')= jsonPretty
 
         .panel-footer
           -var linkType = data["@context"] + "/" + data["@type"]

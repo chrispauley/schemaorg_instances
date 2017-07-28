@@ -41,4 +41,11 @@ html(lang='en')
             p
               | The motivation for this design is to use a controlled vocabulary to structure the data for the content to make it web 3.0 capable. The semantic web enables good SERP rankings, rich snippets, and other cool stuff. This is my part of providing "Raw Data Now" that Tim Berners-Lee requested in his TED Talk.
 
+          div.well-small
+            h4 GitHub Repo
+            // Target
+            input#foo(value='https://github.com/chrispauley/schemaorg_instances.git')
+            // Trigger
+            button.btn(data-clipboard-target='#foo') Copy to Clipboard
+              //img.clippy(src='img/clippy.svg', alt='Copy to clipboard')
     include includes/footer.pug

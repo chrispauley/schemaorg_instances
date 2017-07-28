@@ -1,0 +1,86 @@
+- var headObject = { title: "schema instances - Recipe", description: "Recipe template.", keywords: "my keywords"}
+- var pathObject = { currentPage: "Recipe" }
+- var testData = { title: "this title", context: "my context with @ symbol"}
+// myData, openGraphData are coming from gulpfile.js
+//
+doctype html
+html(lang='en')
+  include includes/mixins.pug
+  //+headSection4_Cloud(myData, openGraphData)
+  +headSection4_Cloud(headObject)
+
+  body
+    // Navigation
+    +navBar(pathObject)
+
+    // Page Content
+    .container
+      // Page Heading/Breadcrumbs
+      .row
+        .col-lg-12
+          h1.page-header
+            |
+            small= name
+          ol.breadcrumb
+            li
+              a(href='index.html') Home
+            -var typeData = locals["@type"]
+            li.active= typeData
+
+      // /.row
+      .row
+        .col-lg-12
+          div
+            div(vocab='http://schema.org/', typeof='MusicEvent')
+              div(property='location', typeof='MusicVenue')
+                meta(property='name', content='Chicago Symphony Center')
+                link(property='sameAs', href='http://en.wikipedia.org/wiki/Symphony_Center')
+                meta(property='address', content='220 S. Michigan Ave, Chicago, Illinois, USA')
+              div(property='offers', typeof='Offer')
+                link(property='url', href='/examples/ticket/12341234')
+                meta(property='priceCurrency', content='USD')
+                | $
+                meta(property='price', content='40')
+                | 40.00
+                link(property='availability', href='http://schema.org/InStock')
+              h2(property='name') Shostakovich Leningrad
+              div
+                div(property='startDate', content='2014-05-23T20:00')
+                  | May
+                  span 23
+                div 8:00 PM
+                div
+                  strong Britten, Shostakovich
+              div
+                p
+                  | Jaap van Zweden conducts two World War II-era pieces showcasing the glorious sound of the CSO.
+              div
+                h3 Program
+                ul
+                  li(property='workPerformed', typeof='CreativeWork')
+                    link(href='http://en.wikipedia.org/wiki/Peter_Grimes', property='sameAs')
+                    span(property='name')
+                      strong Britten
+                      |  Four Sea Interludes and Passacaglia from
+                      em(property='name') Peter Grimes
+                  li(property='workPerformed', typeof='CreativeWork')
+                    link(href='http://en.wikipedia.org/wiki/Symphony_No._7_(Shostakovich)', property='sameAs')
+                    span(property='name')
+                      strong Shostakovich
+                      |  Symphony No. 7
+                      em (Leningrad)
+              div
+                h3 Performers
+                div(property='performer', typeof='MusicGroup')
+                  img(src='/examples/cso_c_logo_s.jpg', alt='Chicago Symphony Orchestra')
+                  link(href='http://cso.org/', property='sameAs')
+                  link(href='http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra', property='sameAs')
+                  a(property='name', href='examples/Performer?id=4434') Chicago Symphony Orchestra
+                div(property='performer', typeof='Person')
+                  link(href='http://www.jaapvanzweden.com/', property='sameAs')
+                  img(src='/examples/jvanzweden_s.jpg', alt='Jaap van Zweden', property='image')
+                  a(property='name', href='/examples/Performer.aspx?id=11324') Jaap van Zweden
+                  div conductor
+
+
+      +fromGulpRow(locals)

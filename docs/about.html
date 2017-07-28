@@ -20,7 +20,16 @@
       <link rel="icon" href="img/icons/favicon.ico">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="js/clipboard.min.js" type="text/javascript"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <style>
+        .clippy {
+          margin-top: -3px;
+          position: relative;
+          top: 3px; vertical-align: middle;}
+        
+        
+      </style>
     </head>
   <body id="about">
     <!-- Navigation-->
@@ -40,6 +49,7 @@
                   <li><a href="zucchini_bread.html">Zucchini Bread</a></li>
                   <li><a href="impactsignsusa.html">Impact Signs, USA</a></li>
                   <li><a href="musicEvent.html">Music Event</a></li>
+                  <li><a href="newyorker.html">News Article</a></li>
                 </ul>
               </li>
             </ul>
@@ -74,6 +84,15 @@
             <p>This is a static website building application that uses semantic data to build the content for humans and machines.</p>
             <p>The motivation for this design is to use a controlled vocabulary to structure the data for the content to make it web 3.0 capable. The semantic web enables good SERP rankings, rich snippets, and other cool stuff. This is my part of providing "Raw Data Now" that Tim Berners-Lee requested in his TED Talk.</p>
           </div>
+          <div class="well-small">
+            <h4>GitHub Repo</h4>
+            <!-- Target-->
+            <input id="foo" value="https://github.com/chrispauley/schemaorg_instances.git">
+            <!-- Trigger-->
+            <button class="btn" data-clipboard-target="#foo">Copy to Clipboard
+              <!--img.clippy(src='img/clippy.svg', alt='Copy to clipboard')-->
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -89,5 +108,25 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript">
+      (function(){
+      var node = document.getElementById('testLink');
+      node.setAttribute("href","https://search.google.com/structured-data/testing-tool#url="+location.href);
+      
+      var clipboard = new Clipboard('.btn');
+      clipboard.on('success', function(e) {
+          console.info('Success Action:', e.action);
+          console.info('Text:', e.text);
+          console.info('Trigger:', e.trigger);
+      
+          e.clearSelection();
+      });
+      
+      clipboard.on('error', function(e) {
+          console.error('Error Action:', e.action);
+          console.error('Trigger:', e.trigger);
+      });
+      })(document);
+    </script>
   </body>
 </html>

@@ -55,31 +55,14 @@
           <h1 class="page-header">My SchemaOrg Instances<small></small></h1>
           <ol class="breadcrumb">
             <li><a href="index.html">Home</a></li>
-            <li class="active">LocalBusiness</li>
+            <li class="active">NewsArticle</li>
           </ol>
         </div>
       </div>
       <!-- /.row-->
       <div class="row">
         <div class="col-lg-4">
-            <div class="panel panel-default well">
-              <div class="panel-heading"><span>Impact Signs, USA</span>
-                <p>Sign Shop</p>
-              </div>
-              <div class="panel-body">
-                <p>427 York Road</p>
-                <p>New Hope PA, 18938</p>
-                <p>2677402195</p>
-              </div>
-              <div class="panel-body"><span>Formatted:</span><span>
-                    <ul>
-                      <li>@type: PostalAddress</li>
-                      <li>streetAddress: 427 York Road</li>
-                      <li>addressLocality: New Hope</li>
-                      <li>addressRegion: PA</li>
-                      <li>postalCode: 18938</li>
-                    </ul></span></div>
-            </div>
+          <!-- Formatted news article goes here-->
         </div>
       </div>
         <div class="row">
@@ -95,35 +78,87 @@
                   <div class="tab-pane" id="formatedData">
                     <ul></ul>
                     <li>@context: http://schema.org</li>
-                    <li>@type: LocalBusiness</li>
-                    <li>address: [object Object]</li>
-                    <li>description: Sign Shop</li>
-                    <li>name: Impact Signs, USA</li>
-                    <li>telephone: 2677402195</li>
-                    <li>url: http://impactsignsusa.com</li>
+                    <li>@type: NewsArticle</li>
+                    <li>headline: In Silicon Valley Now, It’s Almost Always Winner Takes All</li>
+                    <li>alternativeHeadline: In Silicon Valley Now, It’s Almost Always Winner Takes All</li>
+                    <li>articleBody: </li>
+                    <li>articleSection: Elements</li>
+                    <li>dateModified: 2017-06-19T18:48:55.381Z</li>
+                    <li>datePublished: 2015-12-30T20:50:00.000Z</li>
+                    <li>description: </li>
+                    <li>keywords: business,richard branson,uber</li>
+                    <li>thumbnailUrl: https://media.newyorker.com/photos/5909732ac14b3c606c10833a/4:3/w_960,c_limit/Malik-Silicon-Valley-Winner-Take-All.jpg</li>
+                    <li>url: http://www.newyorker.com/tech/elements/in-silicon-valley-now-its-almost-always-winner-takes-all</li>
+                    <li>author: [object Object]</li>
+                    <li>creator: [object Object]</li>
+                    <li>image: [object Object]</li>
+                    <li>publisher: [object Object]</li>
+                    <li>mainEntityOfPage: [object Object]</li>
                   </div>
                   <div class="tab-pane" id="jsonData">
                     <pre>{
   &quot;@context&quot;: &quot;http://schema.org&quot;,
-  &quot;@type&quot;: &quot;LocalBusiness&quot;,
-  &quot;address&quot;: {
-    &quot;@type&quot;: &quot;PostalAddress&quot;,
-    &quot;streetAddress&quot;: &quot;427 York Road&quot;,
-    &quot;addressLocality&quot;: &quot;New Hope&quot;,
-    &quot;addressRegion&quot;: &quot;PA&quot;,
-    &quot;postalCode&quot;: &quot;18938&quot;
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;In Silicon Valley Now, It’s Almost Always Winner Takes All&quot;,
+  &quot;alternativeHeadline&quot;: &quot;In Silicon Valley Now, It’s Almost Always Winner Takes All&quot;,
+  &quot;articleBody&quot;: &quot;&quot;,
+  &quot;articleSection&quot;: &quot;Elements&quot;,
+  &quot;dateModified&quot;: &quot;2017-06-19T18:48:55.381Z&quot;,
+  &quot;datePublished&quot;: &quot;2015-12-30T20:50:00.000Z&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;keywords&quot;: [
+    &quot;business&quot;,
+    &quot;richard branson&quot;,
+    &quot;uber&quot;
+  ],
+  &quot;thumbnailUrl&quot;: &quot;https://media.newyorker.com/photos/5909732ac14b3c606c10833a/4:3/w_960,c_limit/Malik-Silicon-Valley-Winner-Take-All.jpg&quot;,
+  &quot;url&quot;: &quot;http://www.newyorker.com/tech/elements/in-silicon-valley-now-its-almost-always-winner-takes-all&quot;,
+  &quot;author&quot;: {
+    &quot;@context&quot;: &quot;http://schema.org&quot;,
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: [
+      &quot;Om Malik&quot;
+    ]
   },
-  &quot;description&quot;: &quot;Sign Shop&quot;,
-  &quot;name&quot;: &quot;Impact Signs, USA&quot;,
-  &quot;telephone&quot;: &quot;2677402195&quot;,
-  &quot;url&quot;: &quot;http://impactsignsusa.com&quot;
+  &quot;creator&quot;: {
+    &quot;@context&quot;: &quot;http://schema.org&quot;,
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: [
+      &quot;Om Malik&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;@context&quot;: &quot;http://schema.org&quot;,
+    &quot;@type&quot;: &quot;ImageObject&quot;,
+    &quot;url&quot;: &quot;https://media.newyorker.com/photos/5909732ac14b3c606c10833a/4:3/w_960,c_limit/Malik-Silicon-Valley-Winner-Take-All.jpg&quot;,
+    &quot;width&quot;: 0,
+    &quot;height&quot;: 0
+  },
+  &quot;publisher&quot;: {
+    &quot;@context&quot;: &quot;http://schema.org&quot;,
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;The New Yorker&quot;,
+    &quot;url&quot;: &quot;http://www.newyorker.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@context&quot;: &quot;http://schema.org&quot;,
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;http://www.newyorker.com/images/svg/tny-logo.svg&quot;,
+      &quot;width&quot;: 190,
+      &quot;height&quot;: 44
+    }
+  },
+  &quot;mainEntityOfPage&quot;: {
+    &quot;@context&quot;: &quot;http://schema.org&quot;,
+    &quot;@type&quot;: &quot;WebPage&quot;,
+    &quot;@id&quot;: &quot;http://www.newyorker.com/tech/elements/in-silicon-valley-now-its-almost-always-winner-takes-all&quot;
+  }
 }</pre>
                   </div>
                 </div>
               </div>
               <div class="panel-footer">
-                <p class="small"><a href="http://schema.org/LocalBusiness">
-                    <pre>http://schema.org/LocalBusiness</pre></a><br><a id="testLink" href="#">Google Structured TestLink</a></p>
+                <p class="small"><a href="http://schema.org/NewsArticle">
+                    <pre>http://schema.org/NewsArticle</pre></a><br><a id="testLink" href="#">Google Structured TestLink</a></p>
               </div>
             </div>
           </div>

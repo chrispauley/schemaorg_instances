@@ -1,0 +1,17 @@
+{
+  "js": [],
+  "css": [],
+  "html": [],
+  "pug": [],
+  "json": [
+    "/data/files.json",
+    "/data/test.json",
+    "/data/LocalBusiness/impactsignsusa.json",
+    "/data/NewsArticle/newyorker.json",
+    "/data/Organization/basecamp.json",
+    "/data/Person/shostakovich_leningrad.json",
+    "/data/Recipe/banana_bread.json",
+    "/data/Recipe/zucchini_bread.json",
+    "/data/WebSite/basecamp.json",
+    "/data/WebSite/schemaorg_instances.json"]
+}

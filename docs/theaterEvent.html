@@ -1,0 +1,192 @@
+
+<!-- myData, openGraphData are coming from gulpfile.js-->
+<!----><!DOCTYPE html>
+<html lang="en">
+  <!---->
+  <!-- mixins.pug-->
+  <!---->
+  <!-- Shows a row that has a tabbed panel for structured and stringify'd JSON.-->
+  <!--+headSection4_Cloud(myData, openGraphData)-->
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width" initial-scale="1.0">
+      <meta name="description" content="Recipe template.">
+      <meta name="keywords" content="my keywords">
+      <meta name="author" content="Chris Pauley">
+      <meta name="robots" content="index, follow">
+      <meta name="revisit-after" content="1 month">
+      <title>schema instances - Recipe</title>
+      <link rel="icon" href="img/icons/favicon.ico">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+  <body>
+    <!-- Navigation-->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display-->
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#bs-main-navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand pull-left" href="index.html"><img id="brand-image" alt="Vocabulary Driven Site" src="http://via.placeholder.com/100x30"></a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling-->
+          <div class="collapse navbar-collapse" id="bs-main-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="about.html">About</a></li>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Instances<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="banana_bread.html">Banana Bread</a></li>
+                  <li><a href="zucchini_bread.html">Zucchini Bread</a></li>
+                  <li><a href="impactsignsusa.html">Impact Signs, USA</a></li>
+                  <li><a href="musicEvent.html">Music Event</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- Page Content-->
+    <div class="container">
+      <!-- Page Heading/Breadcrumbs-->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header"><small>Shostakovich Leningrad</small></h1>
+          <ol class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active">MusicEvent</li>
+          </ol>
+        </div>
+      </div>
+      <!-- /.row-->
+      <div class="row">
+        <div class="col-lg-12">
+          <div>
+            <div vocab="http://schema.org/" typeof="MusicEvent">
+              <div property="location" typeof="MusicVenue">
+                <meta property="name" content="Chicago Symphony Center">
+                <link property="sameAs" href="http://en.wikipedia.org/wiki/Symphony_Center">
+                <meta property="address" content="220 S. Michigan Ave, Chicago, Illinois, USA">
+              </div>
+              <div property="offers" typeof="Offer">
+                <link property="url" href="/examples/ticket/12341234">
+                <meta property="priceCurrency" content="USD">$
+                <meta property="price" content="40">40.00
+                <link property="availability" href="http://schema.org/InStock">
+              </div>
+              <h2 property="name">Shostakovich Leningrad</h2>
+              <div>
+                <div property="startDate" content="2014-05-23T20:00">May<span>23</span></div>
+                <div>8:00 PM</div>
+                <div><strong>Britten, Shostakovich</strong></div>
+              </div>
+              <div>
+                <p>Jaap van Zweden conducts two World War II-era pieces showcasing the glorious sound of the CSO.</p>
+              </div>
+              <div>
+                <h3>Program</h3>
+                <ul>
+                  <li property="workPerformed" typeof="CreativeWork">
+                    <link href="http://en.wikipedia.org/wiki/Peter_Grimes" property="sameAs"><span property="name"><strong>Britten</strong> Four Sea Interludes and Passacaglia from<em property="name">Peter Grimes</em></span>
+                  </li>
+                  <li property="workPerformed" typeof="CreativeWork">
+                    <link href="http://en.wikipedia.org/wiki/Symphony_No._7_(Shostakovich)" property="sameAs"><span property="name"><strong>Shostakovich</strong> Symphony No. 7<em>(Leningrad)</em></span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3>Performers</h3>
+                <div property="performer" typeof="MusicGroup"><img src="/examples/cso_c_logo_s.jpg" alt="Chicago Symphony Orchestra">
+                  <link href="http://cso.org/" property="sameAs">
+                  <link href="http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra" property="sameAs"><a property="name" href="examples/Performer?id=4434">Chicago Symphony Orchestra</a>
+                </div>
+                <div property="performer" typeof="Person">
+                  <link href="http://www.jaapvanzweden.com/" property="sameAs"><img src="/examples/jvanzweden_s.jpg" alt="Jaap van Zweden" property="image"><a property="name" href="/examples/Performer.aspx?id=11324">Jaap van Zweden</a>
+                  <div>conductor</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default well">
+              <div class="panel-heading">Data From Gulp.js</div>
+              <div class="panel-body">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="active"><a href="#formatedData" role="tab" data-toggle="tab"><i class="fa fa-home">Structured</i></a></li>
+                  <li><a href="#jsonData" role="tab" data-toggle="tab"><i class="fa fa-cog">JSON</i></a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane" id="formatedData">
+                    <ul></ul>
+                    <li>@context: http://schema.org</li>
+                    <li>@type: MusicEvent</li>
+                    <li>location: [object Object]</li>
+                    <li>name: Shostakovich Leningrad</li>
+                    <li>offers: [object Object]</li>
+                    <li>performer: [object Object],[object Object]</li>
+                    <li>startDate: 2014-05-23T20:00</li>
+                    <li>workPerformed: [object Object],[object Object]</li>
+                  </div>
+                  <div class="tab-pane" id="jsonData">
+                    <pre>{
+  &quot;@context&quot;: &quot;http://schema.org&quot;,
+  &quot;@type&quot;: &quot;MusicEvent&quot;,
+  &quot;location&quot;: {
+    &quot;@type&quot;: &quot;MusicVenue&quot;,
+    &quot;name&quot;: &quot;Chicago Symphony Center&quot;,
+    &quot;address&quot;: &quot;220 S. Michigan Ave, Chicago, Illinois, USA&quot;
+  },
+  &quot;name&quot;: &quot;Shostakovich Leningrad&quot;,
+  &quot;offers&quot;: {
+    &quot;@type&quot;: &quot;Offer&quot;,
+    &quot;url&quot;: &quot;/examples/ticket/12341234&quot;,
+    &quot;price&quot;: &quot;40&quot;,
+    &quot;priceCurrency&quot;: &quot;USD&quot;,
+    &quot;availability&quot;: &quot;http://schema.org/InStock&quot;
+  },
+  &quot;performer&quot;: [
+    {
+      &quot;@type&quot;: &quot;MusicGroup&quot;,
+      &quot;name&quot;: &quot;Chicago Symphony Orchestra&quot;,
+      &quot;sameAs&quot;: [
+        &quot;http://cso.org/&quot;,
+        &quot;http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra&quot;
+      ]
+    },
+    {
+      &quot;@type&quot;: &quot;Person&quot;,
+      &quot;image&quot;: &quot;/examples/jvanzweden_s.jpg&quot;,
+      &quot;name&quot;: &quot;Jaap van Zweden&quot;,
+      &quot;sameAs&quot;: &quot;http://www.jaapvanzweden.com/&quot;
+    }
+  ],
+  &quot;startDate&quot;: &quot;2014-05-23T20:00&quot;,
+  &quot;workPerformed&quot;: [
+    {
+      &quot;@type&quot;: &quot;CreativeWork&quot;,
+      &quot;name&quot;: &quot;Britten Four Sea Interludes and Passacaglia from Peter Grimes&quot;,
+      &quot;sameAs&quot;: &quot;http://en.wikipedia.org/wiki/Peter_Grimes&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;CreativeWork&quot;,
+      &quot;name&quot;: &quot;Shostakovich Symphony No. 7 (Leningrad)&quot;,
+      &quot;sameAs&quot;: &quot;http://en.wikipedia.org/wiki/Symphony_No._7_(Shostakovich)&quot;
+    }
+  ]
+}</pre>
+                  </div>
+                </div>
+              </div>
+              <div class="panel-footer">
+                <p class="small"><a href="http://schema.org/MusicEvent">
+                    <pre>http://schema.org/MusicEvent</pre></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

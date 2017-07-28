@@ -24,7 +24,7 @@
     },
     {
       "@type": "Person",
-      "image": "/examples/jvanzweden_s.jpg",
+      "image": "http://via.placeholder.com/350x150",
       "name": "Jaap van Zweden",
       "sameAs": "http://www.jaapvanzweden.com/"
     }

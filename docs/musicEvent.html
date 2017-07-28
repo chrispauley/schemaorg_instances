@@ -1,6 +1,4 @@
-
-<!-- myData, openGraphData are coming from gulpfile.js-->
-<!----><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <!---->
   <!-- mixins.pug-->
@@ -61,6 +59,9 @@
       <!-- /.row-->
       <div class="row">
         <div class="col-lg-12">
+          <div class="well">
+            <div class="span"><a href="https://search.google.com/structured-data/testing-tool#url=https://chrispauley.github.io/schemaorg_instances/musicEvent.html">Google Test of This Page</a></div>
+          </div>
           <div>
             <div vocab="http://schema.org/" typeof="MusicEvent">
               <div property="location" typeof="MusicVenue">
@@ -96,12 +97,12 @@
               </div>
               <div>
                 <h3>Performers</h3>
-                <div property="performer" typeof="MusicGroup"><img src="/examples/cso_c_logo_s.jpg" alt="Chicago Symphony Orchestra">
+                <div property="performer" typeof="MusicGroup"><img src="http://via.placeholder.com/50x50" alt="Chicago Symphony Orchestra">
                   <link href="http://cso.org/" property="sameAs">
                   <link href="http://en.wikipedia.org/wiki/Chicago_Symphony_Orchestra" property="sameAs"><a property="name" href="examples/Performer?id=4434">Chicago Symphony Orchestra</a>
                 </div>
                 <div property="performer" typeof="Person">
-                  <link href="http://www.jaapvanzweden.com/" property="sameAs"><img src="/examples/jvanzweden_s.jpg" alt="Jaap van Zweden" property="image"><a property="name" href="/examples/Performer.aspx?id=11324">Jaap van Zweden</a>
+                  <link href="http://www.jaapvanzweden.com/" property="sameAs"><img src="http://via.placeholder.com/150x150" alt="Jaap van Zweden" property="image"><a property="name" href="/examples/Performer.aspx?id=11324">Jaap van Zweden</a>
                   <div>conductor</div>
                 </div>
               </div>
@@ -158,7 +159,7 @@
     },
     {
       &quot;@type&quot;: &quot;Person&quot;,
-      &quot;image&quot;: &quot;/examples/jvanzweden_s.jpg&quot;,
+      &quot;image&quot;: &quot;http://via.placeholder.com/350x150&quot;,
       &quot;name&quot;: &quot;Jaap van Zweden&quot;,
       &quot;sameAs&quot;: &quot;http://www.jaapvanzweden.com/&quot;
     }
@@ -182,11 +183,29 @@
               </div>
               <div class="panel-footer">
                 <p class="small"><a href="http://schema.org/MusicEvent">
-                    <pre>http://schema.org/MusicEvent</pre></a></p>
+                    <pre>http://schema.org/MusicEvent</pre></a><br><a id="testLink" href="#">Google Structured TestLink</a></p>
               </div>
             </div>
           </div>
         </div>
     </div>
+    <footer>
+      <div class="container">
+        <div class="row"><br>
+          <div class="col-md-6">
+            <center>
+              <h4 class="footer">This is our footer.</h4>
+              <p class="footertext">A real nice footer.</p><br>
+            </center>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      (function(){
+      var node = document.getElementById('testLink');
+      node.setAttribute("href","https://search.google.com/structured-data/testing-tool#url="+Window.location);
+      })(document);
+    </script>
   </body>
 </html>

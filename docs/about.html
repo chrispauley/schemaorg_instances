@@ -44,42 +44,63 @@
       </nav>
     <!-- Page Content-->
     <div class="container">
+      <div class="row">
+        <hr>
+      </div>
       <!-- Page Heading/Breadcrumbs-->
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-header"><small>About this site</small></h1>
+          <h1 class="page-header">
+            Schema Org Instances...<small>&nbsp; Whats this about?</small></h1>
           <ol class="breadcrumb">
             <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
           </ol>
         </div>
       </div>
-      <!-- /.row-->
       <div class="row">
         <div class="col-lg-12">
-          <div>
-            <h1></h1>
-            <p></p>
-            <p></p>
+          <div class="well-small">
+            <h4>This is a static website building application that uses semantic data to build the content for humans and machines.</h4>
+            <p>
+              The motivation for this design is to use a controlled vocabulary to structure the data for the content to
+              make it web 3.0 capable. The semantic web enables good SERP rankings, rich snippets, and other cool stuff.
+              This is my part of providing "Raw Data Now" that Tim Berners-Lee requested in his <a href='https://www.ted.com/talks/tim_berners_lee_on_the_next_web'>TED Talk</a>.
+            </p>
+            <p>The main goal is to present content for humans and machines that originates from a JSON-LD file.</p>
+            <h4>Design Decisions</h4>
+            <p>I'd like to call this the "Vocabulary Driven Design" approach. In this case we are using <a href='http://schema.org'>Schema.org</a> as our vocabulary. The vocabulary is widely supported for the semantic web and it is mature. The elephant in the room, Google, supports this vocabulary so the positive benefits of machine readable content ought to be apparent. The other social media giants support the semantic web too: Twitter and Facebook uses meta tags in the html head section as well as microformats and RDFa.</p>
+            <p>This project will use JSON-LD because it is JSON. This enables including the page meta data in a script tag and it can be injected into the page as content.</p>
+            <p>The project will generate static content instead of a CMS like WordPress.  The source of truth for a CMS is the database. One could use plugins to automate the process of presenting the meta data, but that's not fun and WP creates monoliths of obfuscated content. Static content can be much faster to load and it enables different options for enhancement based upon my skillset and goals for using the structured data with a controlled vocabulary.</p>
+            <p>The source of truth for this application will be the instances of JSON-LD data. This design decision will be enable us to add more semantic web features with the ease of using JSON. One could use triples in a turtle file or an RDF file, but that will easily put the project at risk. The context of using structured data for the purpose of generating human and machine readable content in a website. A triple store of RDF instances can be read into a graph database for analysis, but that is a different purpose. Static site generation with RDF  would require transforming the data into html and then the rich snippets would need to be smart enough to use XML either through another GET or through embedded data. XML embedded in a web page is hard and our goal is to make easy to consume the information.</p>
+            <p>The project will use Nodejs. Node works. Sure we could use Ruby with Jekyll. We could use Python with Django. We could use Java, Visual Studio, or another language and environment.</p>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <div class="well-small">
-            <p>This is a static website building application that uses semantic data to build the content for humans and machines.</p>
-            <p>The motivation for this design is to use a controlled vocabulary to structure the data for the content to make it web 3.0 capable. The semantic web enables good SERP rankings, rich snippets, and other cool stuff. This is my part of providing "Raw Data Now" that Tim Berners-Lee requested in his TED Talk.</p>
-          </div>
-          <div class="well-small">
-            <h4>GitHub Repo</h4>
-            <!-- Target-->
-            <input id="foo" value="https://github.com/chrispauley/schemaorg_instances.git">
+          <div class="form-group well">
+            <label for="repository">GitHub Repo</label>
+            <input id="foo" type="text" value="https://github.com/chrispauley/schemaorg_instances.git">
             <!-- Trigger-->
             <button class="btn" data-clipboard-target="#foo">Copy to Clipboard
-              <!--img.clippy(src='img/clippy.svg', alt='Copy to clipboard')-->
+              <!--img.clippy.img-responsive(src='img/icons/clippy.svg', alt='Copy to clipboard')-->
             </button>
           </div>
         </div>
+      </div>
+      <div class="row row-padded">
+        <hr>
+        <center>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="panel panel-default panel-profile">
+              <div class="panel-body text-center" style="color: #fff; background-image: url(http://cdn.shopify.com/s/files/1/0691/5403/t/139/assets/insta-2.jpg?12817922976150776315);"><img class="img-circle img-responsive panel-profile-img" src="img/cp_profile.jpg" alt="Chris Pauley Image">
+                <h4 class="panel-title"> Chris Pauley</h4>
+                <p style="color: #eee;">Web app developer, photographer, data engineer.</p><a class="btn btn-primary btn-sm" href="https://github.com/chrispauley"><span class="icon icon-add-user">View GitHub</span></a>
+              </div>
+            </div>
+          </div>
+        </center>
       </div>
     </div>
     <footer>

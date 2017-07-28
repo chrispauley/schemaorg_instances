@@ -1,10 +1,5 @@
-
-<!-- myData, openGraphData are coming from gulpfile.js-->
-<!----><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <!---->
-  <!-- mixins.pug-->
-  <!---->
   <!-- Shows a row that has a tabbed panel for structured and stringify'd JSON.-->
   <!--+headSection4_Cloud(myData, openGraphData)-->
     <head>
@@ -20,6 +15,7 @@
       <link rel="icon" href="img/icons/favicon.ico">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="js/clipboard.min.js" type="text/javascript"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
   <body>
@@ -65,7 +61,6 @@
           <div>
             <h1>Banana Bread</h1>
             <p>Cathy Pauley</p>
-            <p></p>
           </div>
         </div>
       </div>
@@ -75,8 +70,13 @@
             <h2>Bake at 350 degrees F for 1.5 hours</h2>
             <p>4 small loaves or 2 medium loaves (6 in)</p>
             <ul>
-              <li>this title</li>
-              <li>my context with @ symbol</li>
+              <li>PT20M</li>
+              <li>Bread</li>
+              <li>4 small loaves or 2 medium loaves (6 in)</li>
+              <li>Bake at 350 degrees F for 1.5 hours</li>
+              <li>
+                <p>3 Bannanas,.5 C Oil,1.5 C Sugar,1 Tbs Vanilla,2 C Flour,.5 Tsp Baking Powder,.75 Tsp Baking Soda,.5 Tsp Salt,.25 C Orange Juice</p>
+              </li>
             </ul>
           </div>
         </div>
@@ -84,7 +84,11 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="panel panel-default well">
-              <div class="panel-heading">Data From Gulp.js</div>
+              <div class="panel-heading"><span>Data From Gulp.js</span>
+                <button class="btn btn-sm" data-clipboard-target="#jsonDataContainer">copy
+                  <!--img(src='img/icons/clippy.svg', alt='Copy to clipboard')-->
+                </button>
+              </div>
               <div class="panel-body">
                 <ul class="nav nav-tabs" role="tablist">
                   <li class="active"><a href="#formatedData" role="tab" data-toggle="tab"><i class="fa fa-home">Structured</i></a></li>
@@ -105,7 +109,7 @@
                     <li>name: Banana Bread</li>
                   </div>
                   <div class="tab-pane" id="jsonData">
-                    <pre>{
+                    <pre id="jsonDataContainer">{
   &quot;@context&quot;: &quot;http://schema.org&quot;,
   &quot;@type&quot;: &quot;Recipe&quot;,
   &quot;cookTime&quot;: &quot;PT90M&quot;,

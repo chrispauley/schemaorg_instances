@@ -1,8 +1,5 @@
 - var headObject = { title: "schema instances - Recipe", description: "Recipe template.", keywords: "my keywords"}
 - var pathObject = { currentPage: "Recipe" }
-- var testData = { title: "this title", context: "my context with @ symbol"}
-// myData, openGraphData are coming from gulpfile.js
-//
 doctype html
 html(lang='en')
   include includes/mixins.pug
@@ -31,16 +28,19 @@ html(lang='en')
       .row
         .col-lg-12
           div
-            h1= name
-            p= author
-            p= context
+            h1= locals.name
+            p= locals.author
       .row
         .col-lg-5
           div.well
             h2= cookingMethod
             p= recipeYield
             ul
-              li= testData.title
-              li= testData['context']
+              li= locals.prepTime
+              li= locals.recipeCategory
+              li= locals.recipeYield
+              li= locals.cookingMethod
+              li
+                p= locals.ingredients
 
       +fromGulpRow(locals)

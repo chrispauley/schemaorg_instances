@@ -1,11 +1,8 @@
 - var headObject = { title: "schema instances - LocalBusiness", description: "Uses LocalBusiness template.", keywords: "my keywords"}
 - var pathObject = { currentPage: "LocalBusiness" }
-// myData, openGraphData are coming from gulpfile.js
-//
 doctype html
 html(lang='en')
   include includes/mixins.pug
-  //+headSection4_Cloud(myData, openGraphData)
   +headSection4_Cloud(headObject)
 
   body(id= currentPage)

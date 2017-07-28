@@ -1,3 +1,5 @@
+// gulpfile.js
+//
 var gulp = require('gulp');
 var pug = require('gulp-pug');
 var data = require('gulp-data');
@@ -8,6 +10,7 @@ var fs = require('fs');
 var merge = require('gulp-merge-json');
 var rename = require('gulp-rename');
 var foreach = require('gulp-foreach');
+var inject = require('gulp-inject');
 
 gulp.task('default', function() {
   console.log('gulp default');
@@ -84,6 +87,50 @@ gulp.task('pug:LocalBusiness', function() {
     )
 });
 
+gulp.task('pug:Event', function() {
+  return gulp.src('data/Event/*.json')
+    .pipe(foreach(function(stream, file){
+        var jsonFile = file; // We create this 'jsonFile' variable because the 'file' variable is overwritten on the next gulp.src.
+        var jsonBasename = path.basename(jsonFile.path, path.extname(jsonFile.path));
+        var jsonData = getJsonData(file);
+        var data = {};
+        data[jsonBasename] = jsonData;
+        // Object.assign(data, jsonData)
+        console.log("[" +jsonBasename, "] current data is: ", data[jsonBasename]);
+        return gulp.src('src/templates/event.pug')
+          // .pipe(data(getJsonData(jsonFile)))
+          .pipe(pug({pretty: true, data: data[jsonBasename]}))
+          .pipe(swig())
+          .pipe(rename(function(htmlFile) {
+            htmlFile.basename = jsonBasename;
+          }))
+          .pipe(gulp.dest('docs'))
+      })
+    )
+});
+
+gulp.task('pug:NewsArticle', function() {
+  return gulp.src('data/NewsArticle/*.json')
+    .pipe(foreach(function(stream, file){
+        var jsonFile = file; // We create this 'jsonFile' variable because the 'file' variable is overwritten on the next gulp.src.
+        var jsonBasename = path.basename(jsonFile.path, path.extname(jsonFile.path));
+        var jsonData = getJsonData(file);
+        var data = {};
+        data[jsonBasename] = jsonData;
+        // Object.assign(data, jsonData)
+        // console.log("[" +jsonBasename, "] current data is: ", data[jsonBasename]);
+        return gulp.src('src/templates/NewsArticle.pug')
+          // .pipe(data(getJsonData(jsonFile)))
+          .pipe(pug({pretty: true, data: data[jsonBasename]}))
+          .pipe(swig())
+          .pipe(rename(function(htmlFile) {
+            htmlFile.basename = jsonBasename;
+          }))
+          .pipe(gulp.dest('docs'))
+      })
+    )
+});
+
 // https://tusharghate.com/rendering-pug-templates-with-multiple-data-files
 // Causes a deep merge into one combined json file.
 gulp.task('pug:combined', function() {
@@ -101,3 +148,27 @@ gulp.task('pug:static-pages', function() {
     .pipe(pug({ pretty:true }))
     .pipe(gulp.dest('docs'));
 });
+
+gulp.task('inject:filelist', function(){
+  gulp.src('data/files.json')
+    .pipe(inject(gulp.src(['./docs/js/*.js', './docs/*.css', './docs/*.html'], {read: false}), {
+      starttag: '"{{ext}}": [',
+      endtag: ']',
+      transform: function (filepath, file, i, length) {
+        return '  "' + filepath + '"' + (i + 1 < length ? ',' : '');
+      }
+    }))
+    .pipe(gulp.dest('docs/'));
+    gulp.src('data/files.json')
+      .pipe(inject(gulp.src(['./data/**/*.json'], {read: false}), {
+        starttag: '"{{ext}}": [',
+        endtag: ']',
+        transform: function (filepath, file, i, length) {
+          return '  "' + filepath + '"' + (i + 1 < length ? ',' : '');
+        }
+      }))
+      .pipe(gulp.dest('docs/'));
+});
+
+gulp.task('all-views', ['pug:static-pages', 'pug:NewsArticle', 'pug:Recipe',
+'pug:recipe', 'pug:LocalBusiness', 'pug:Event']);

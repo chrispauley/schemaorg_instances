@@ -27,7 +27,6 @@ The main goal is to present content for humans and machines.
   - Initial versions of this application will not use ReactJS or other frameworks. At that point, webpack, webpack loaders, and webpack-dev-server will likely be used to implement additional components to enhance the site.
 
 
-[principle name, statement, rationale, implications]
 
 TL;DR
 ## Installation

@@ -2,7 +2,7 @@
 - var pathObject = { currentPage: "about" }
 doctype html
 html(lang='en')
-  include includes/mixins.pug
+  include ../partials/mixins.pug
   +headSection4_Cloud(headObject)
 
   body(id= pathObject.currentPage)
@@ -71,4 +71,4 @@ html(lang='en')
                   p(style="color: #eee;") Web app developer, photographer, data engineer.
                   a.btn.btn-primary.btn-sm(href='https://github.com/chrispauley')
                     span.icon.icon-add-user View GitHub
-    include includes/footer.pug
+    include ../partials/footer.pug

@@ -2,7 +2,7 @@
 - var pathObject = { currentPage: "LocalBusiness" }
 doctype html
 html(lang='en')
-  include includes/mixins.pug
+  include ../partials/mixins.pug
   +headSection4_Cloud(headObject)
 
   body(id= currentPage)
@@ -30,4 +30,4 @@ html(lang='en')
 
 
       +fromGulpRow(locals)
-    include includes/footer.pug
+    include ../partials/footer.pug

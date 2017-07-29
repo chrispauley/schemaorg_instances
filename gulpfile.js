@@ -144,7 +144,7 @@ gulp.task('pug:combined', function() {
 
 // Static Pages
 gulp.task('pug:static-pages', function() {
-  return gulp.src(['src/templates/index.pug', 'src/templates/about.pug'])
+  return gulp.src(['src/pages/index.pug', 'src/pages/about.pug'])
     .pipe(pug({ pretty:true }))
     .pipe(gulp.dest('docs'));
 });

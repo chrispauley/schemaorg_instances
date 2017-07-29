@@ -16,8 +16,8 @@ gulp.task('default', function() {
   console.log('gulp default');
 });
 
-// var myData = require('./data/Recipe/zucchini_bread.json');
-// var myData2 = require('./data/Recipe/banana_bread.json');
+// var myData = require('./src/data/Recipe/zucchini_bread.json');
+// var myData2 = require('./src/data/Recipe/banana_bread.json');
 // Object.assign(myData, myData2);
 // gulp.task('views', function docsHTML() {
 //   return gulp.src('src/templates/*.pug')
@@ -26,7 +26,7 @@ gulp.task('default', function() {
 // });
 
 gulp.task('pug:recipe', function docsHTML() {
-  var myData = require('./data/Recipe/zucchini_bread.json');
+  var myData = require('./src/data/Recipe/zucchini_bread.json');
   return gulp.src('src/templates/recipe.pug')
     .pipe(pug({
       pretty: true, data: myData
@@ -44,7 +44,7 @@ var getJsonData = function(file) {
 
 //https://stackoverflow.com/questions/28921317/how-to-produce-multiple-html-files-from-a-single-jade-template-with-gulp-and-gul
 gulp.task('pug:Recipe', function() {
-  return gulp.src('data/Recipe/*.json')
+  return gulp.src('src/data/Recipe/*.json')
     .pipe(foreach(function(stream, file){
         var jsonFile = file; // We create this 'jsonFile' variable because the 'file' variable is overwritten on the next gulp.src.
         var jsonBasename = path.basename(jsonFile.path, path.extname(jsonFile.path));
@@ -66,7 +66,7 @@ gulp.task('pug:Recipe', function() {
 });
 
 gulp.task('pug:LocalBusiness', function() {
-  return gulp.src('data/LocalBusiness/*.json')
+  return gulp.src('src/data/LocalBusiness/*.json')
     .pipe(foreach(function(stream, file){
         var jsonFile = file; // We create this 'jsonFile' variable because the 'file' variable is overwritten on the next gulp.src.
         var jsonBasename = path.basename(jsonFile.path, path.extname(jsonFile.path));
@@ -88,7 +88,7 @@ gulp.task('pug:LocalBusiness', function() {
 });
 
 gulp.task('pug:Event', function() {
-  return gulp.src('data/Event/*.json')
+  return gulp.src('src/data/Event/*.json')
     .pipe(foreach(function(stream, file){
         var jsonFile = file; // We create this 'jsonFile' variable because the 'file' variable is overwritten on the next gulp.src.
         var jsonBasename = path.basename(jsonFile.path, path.extname(jsonFile.path));
@@ -110,7 +110,7 @@ gulp.task('pug:Event', function() {
 });
 
 gulp.task('pug:NewsArticle', function() {
-  return gulp.src('data/NewsArticle/*.json')
+  return gulp.src('src/data/NewsArticle/*.json')
     .pipe(foreach(function(stream, file){
         var jsonFile = file; // We create this 'jsonFile' variable because the 'file' variable is overwritten on the next gulp.src.
         var jsonBasename = path.basename(jsonFile.path, path.extname(jsonFile.path));
@@ -134,7 +134,7 @@ gulp.task('pug:NewsArticle', function() {
 // https://tusharghate.com/rendering-pug-templates-with-multiple-data-files
 // Causes a deep merge into one combined json file.
 gulp.task('pug:combined', function() {
-  return gulp.src('data/**/*.json')
+  return gulp.src('src/data/**/*.json')
     .pipe(merge({
        fileName: 'combined.json'
   }))
@@ -150,7 +150,7 @@ gulp.task('pug:static-pages', function() {
 });
 
 gulp.task('inject:filelist', function(){
-  gulp.src('data/files.json')
+  gulp.src('src/data/files.json')
     .pipe(inject(gulp.src(['./docs/js/*.js', './docs/*.css', './docs/*.html'], {read: false}), {
       starttag: '"{{ext}}": [',
       endtag: ']',
@@ -159,8 +159,8 @@ gulp.task('inject:filelist', function(){
       }
     }))
     .pipe(gulp.dest('docs/'));
-    gulp.src('data/files.json')
-      .pipe(inject(gulp.src(['./data/**/*.json'], {read: false}), {
+    gulp.src('src/data/files.json')
+      .pipe(inject(gulp.src(['./src/data/**/*.json'], {read: false}), {
         starttag: '"{{ext}}": [',
         endtag: ']',
         transform: function (filepath, file, i, length) {

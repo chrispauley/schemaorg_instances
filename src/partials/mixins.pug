@@ -1,0 +1,147 @@
+mixin headSection4_Cloud(headObject)
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport',content='width=device-width', initial-scale='1.0')
+    meta(name='description', content= headObject.description)
+    meta(name='keywords', content= headObject.keywords)
+    meta(name='author', content='Chris Pauley')
+    meta(name='robots', content='index, follow')
+    meta(name='revisit-after', content='1 month')
+    title= headObject.title
+    link(rel='icon', href='img/icons/favicon.ico')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+    script(src="js/clipboard.min.js", type='text/javascript')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    //- style.
+    //-   .clippy {
+    //-     margin-top: -3px;
+    //-     position: relative;
+    //-     top: 3px; vertical-align: middle;}
+
+
+mixin navBar(pathObject)
+  - var active = pathObject.currentPage;// Navigation
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-main-navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand.pull-left(href='index.html')
+            img#brand-image(alt='Vocabulary Driven Site', src='http://via.placeholder.com/100x30')
+        // Collect the nav links, forms, and other content for toggling
+        #bs-main-navbar-collapse.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li(class=active == 'about' ? 'active' : '')
+              a(href='about.html') About
+            li.dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                | Instances
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='banana_bread.html') Banana Bread
+                li
+                  a(href='zucchini_bread.html') Zucchini Bread
+                li
+                  a(href='impactsignsusa.html') Impact Signs, USA
+                li
+                  a(href='musicEvent.html') Music Event
+                li
+                  a(href='newyorker.html') News Article
+
+mixin iterateProps(obj)
+  ul
+    - for(var prop in obj) {
+      li #{prop}: #{obj[prop]}
+    - }
+
+mixin postalAddressFormat(adr)
+  -var linkType = adr["@type"]
+  -var formattedAddressLine = adr.addressLocality + " " + adr.addressRegion + ", " + adr.postalCode
+  +iterateProps(adr)
+
+
+mixin localBusinessCard(data)
+  -var linkType = data["@context"] + "/" + data["@type"]
+  -var adr = data.address
+  -var formattedAddressLine = adr.addressLocality + " " + adr.addressRegion + ", " + adr.postalCode
+  .panel.panel-default.well
+    .panel-heading
+      span= data.name
+      p= data.description
+
+    .panel-body
+      p= adr.streetAddress
+      p= formattedAddressLine
+      p= data.telephone
+    .panel-body
+      span Formatted:
+      span
+        +iterateProps(data.address)
+
+
+mixin dataFromGulp(data)
+  .panel.panel-default
+    .panel-heading Data Object from Gulpjs
+      -var linkType = data["@context"] + "/" + data["@type"]
+      p.small
+        a(href= linkType)
+          span= linkType
+    .panel-body
+      ul
+      - for(var prop in data) {
+        li #{prop}: #{data[prop]}
+      - }
+
+mixin showJSON(data)
+  .panel.panel-default
+    .panel-heading JSON Data Object from Gulpjs
+      -var jsonString = JSON.stringify(data, null, 2)
+
+    .panel-body
+      span= jsonString
+
+mixin wrapInScriptTag(pData)
+  script(type='application/ld+json')= pData
+
+// Shows a row that has a tabbed panel for structured and stringify'd JSON.
+mixin fromGulpRow(data)
+  .row
+    .col-lg-12
+      .panel.panel-default.well
+        .panel-heading
+          span Data From Gulp.js
+          button.btn.btn-sm(data-clipboard-target='#jsonDataContainer') copy
+            //img(src='img/icons/clippy.svg', alt='Copy to clipboard')
+        .panel-body
+          ul.nav.nav-tabs(role="tablist")
+            li.active
+              a(href="#formatedData",role="tab",data-toggle="tab")
+                i.fa.fa-home Structured
+            li
+              a(href="#jsonData",role="tab",data-toggle="tab")
+                i.fa.fa-cog JSON
+
+          .tab-content
+            .tab-pane(id="formatedData")
+              ul
+              - for(var prop in data) {
+                li #{prop}: #{data[prop]}
+              - }
+            .tab-pane(id="jsonData")
+              -var jsonPretty = JSON.stringify(data,null,2);
+              pre(id='jsonDataContainer')= jsonPretty
+
+        .panel-footer
+          -var linkType = data["@context"] + "/" + data["@type"]
+          p.small
+            a(href= linkType)
+              pre= linkType
+            br
+            a#testLink(href="#") Google Structured TestLink

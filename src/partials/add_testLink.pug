@@ -1,0 +1,19 @@
+script(type='text/javascript').
+  (function(){
+  var node = document.getElementById('testLink');
+  node.setAttribute("href","https://search.google.com/structured-data/testing-tool#url="+location.href);
+
+  var clipboard = new Clipboard('.btn');
+  clipboard.on('success', function(e) {
+      console.info('Success Action:', e.action);
+      console.info('Text:', e.text);
+      console.info('Trigger:', e.trigger);
+
+      e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+      console.error('Error Action:', e.action);
+      console.error('Trigger:', e.trigger);
+  });
+  })(document);
